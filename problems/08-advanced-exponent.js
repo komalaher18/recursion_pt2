@@ -39,10 +39,39 @@ be recursively calling `advancedExponent`. Find a way to visually see how many
 times `advancedExponent` is being recursively called.
 ***********************************************************************/
 
-
-function advancedExponent(b, n) {
-  // Your code here
-}
+const advancedExponent = (b, n) => {
+  if (n === 0) return 1;
+  if (n === 1) return b;
+  if (n % 2 === 0){
+    return advancedExponent(b, n/2) ** 2;
+  }
+  return b * (advancedExponent(b, (n - 1) / 2) ** 2)
+  };
+  
+  // const advancedExponent = (b, n) => {
+  // !!!! full disclosure - the solution to this problem is basically in the problem itself
+  // !!!! it's just a matter of converting the math into JS code - which we will do below:
+  
+  //! base case(s)?
+  // essentially, there are sort of 2 base cases here - due to the fact that the values will change based
+  // on whether or not the power(n) is an odd or even number
+  
+  // if the power(n) is an odd number, it will recurse down to 1 
+  // if the power(n) is an even number, it will recurse down to 0
+  //?   if (n === 0) return 1;
+  //?   if (n === 1) return b;
+  
+  //! recursive case / step - if the power (n) is even
+  // utilize a modulo to see if n is even or odd from here on out
+  // regardless of the outcome (even or odd) - we will then recurse from there to run the func again
+  // more math - gross^infinity - but again, the math solutions are in the question itself.
+  //?   if (n % 2 === 0){
+  //?     return advancedExponent(b, n/2) ** 2;
+  //?   }
+  
+  //! recursive case / step - if the power (n) is odd
+  //?   return b * (advancedExponent(b, (n - 1) / 2) ** 2)
+  //?   };
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
