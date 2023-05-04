@@ -32,6 +32,30 @@ function exponent(num, power) {
 
 }
 
+// const exponent = (num, power) => {
+//     if (power === 0) return 1;
+//     if (power > 0) return num * exponent(num, power - 1);
+//     return (1 / num) * exponent(num, power + 1);
+//   };
+  
+  //?   const exponent = (num, power) => {
+  //! base case
+  // we eventually want the power to get to 0 - whether we increment or decrement
+  // once we get to the power being 0, we are finished recursing
+  //?     if (power === 0) return 1;
+  
+  //! recursive case/step - if power is a positive number
+  // in order to get to the base case, we have to decrement the power each time we call the func.
+  // the rest is math (gross)
+  //?     if (power > 0) return num * exponent(num, power - 1);
+  
+  //! recursive case/step - if the power is negative (also an implied else statement)
+  // if the power is negative, we have to increment the power each time to get up to 0
+  // again, more math (gross*2)
+  // because the power is negative, we want to return the denominator, hence the 1/num here;
+  //?     return (1 / num) * exponent(num, power + 1);
+  //?    }
+
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
